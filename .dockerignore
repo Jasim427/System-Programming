@@ -1,4 +1,6 @@
-build/
 .git
-.github
+.gitignore
+build
 *.o
+*.log
+
