@@ -1,2 +1,0 @@
-{"timestamp":1124167,"category":"nimbus_events","name":"enroll_failed","extra":{"experiment":"long-term-holdback-2026-growth-desktop","reason":"feature-conflict","glean_timestamp":"1767976980163"}}
-{"timestamp":1124170,"category":"nimbus_events","name":"unenrollment","extra":{"branch":"delivery","glean_timestamp":"1767976980165","reason":"recipe-not-seen","experiment":"long-term-holdback-2025h1-growth-desktop"}}
