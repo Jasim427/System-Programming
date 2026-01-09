@@ -15,7 +15,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN mkdir -p build && cd build && cmake .. && make
+RUN make
+
 
 CMD ["./build/student_app"]
 
