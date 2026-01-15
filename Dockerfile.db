@@ -1,0 +1,19 @@
+# Dockerfile.db
+# PostgreSQL Database Container for Student Information System
+
+FROM postgres:15
+
+LABEL maintainer="omar.badubais@stu.fbu.edu.tr"
+LABEL description="PostgreSQL container for SIS project"
+
+# Default database configuration
+ENV POSTGRES_DB=sis_db
+ENV POSTGRES_USER=sis_user
+ENV POSTGRES_PASSWORD=sis_password
+
+# Expose PostgreSQL port
+EXPOSE 5432
+
+# Health check to ensure database readiness
+HEALTHCHECK --interval=10s --timeout=5s --retries=5 \
+  CMD pg_isready -U $POSTGRES_USER -d $POSTGRES_DB || exit 1
