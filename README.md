@@ -7,7 +7,7 @@
 
 - 2nd Student : OMAR KHALED HASAN BADUBAIS
 
-- 3rd student : both of us working in it
+- 3rd student : both of us working on it
 
   
 
