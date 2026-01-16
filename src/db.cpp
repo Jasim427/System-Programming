@@ -10,7 +10,7 @@ Database::Database() {
     const char* pass = std::getenv("DB_PASSWORD");
 
     conn_str =
-        "host=" + std::string(host ? host : "localhost") +
+        "host=" + std::string(host ? host : "db") +
         " port=" + std::string(port ? port : "5432") +
         " dbname=" + std::string(name ? name : "sisdb") +
         " user=" + std::string(user ? user : "sisuser") +
@@ -48,9 +48,10 @@ void Database::createTable() {
         std::cerr << "Create table error: " << e.what() << std::endl;
     }
 }
+
 void Database::addStudent(const std::string& name,
-                           const std::string& email,
-                           int age) {
+                          const std::string& email,
+                          int age) {
     pqxx::connection c(conn_str);
     pqxx::work w(c);
 
@@ -102,3 +103,4 @@ void Database::deleteStudent(int id) {
     w.commit();
     std::cout << "Student deleted\n";
 }
+

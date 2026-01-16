@@ -2,18 +2,15 @@
 #include "db.hpp"
 
 int main() {
-    Database db;
+    std::cout << "Starting Student Information System...\n";
 
+    Database db;
     if (!db.connect()) {
-        std::cout << "Database not available\n";
+        std::cerr << "Database connection failed\n";
         return 1;
     }
 
-    db.createTable();
-    db.addStudent("Omar", "omar@email.com", 22);
-    db.listStudents();
-    db.updateStudent(1, 23);
-    db.deleteStudent(1);
-
+    std::cout << "Database connected. Application ready.\n";
     return 0;
 }
+
