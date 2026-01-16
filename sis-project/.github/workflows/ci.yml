@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ Develop ]
+  pull_request:
+    branches: [ Develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Docker version
+        run: docker --version
+
+      - name: Build containers
+        run: docker compose build

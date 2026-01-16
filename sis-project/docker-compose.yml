@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  db:
+    image: omarbadubais/sis-project-postgres:latest
+    container_name: sis_postgres
+    environment:
+      POSTGRES_USER: sis_user
+      POSTGRES_PASSWORD: sis_pass
+      POSTGRES_DB: sis_db
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+    networks:
+      - sis_network
+
+  app:
+    image: omarbadubais/sis-project-app:latest
+    container_name: sis_app
+    depends_on:
+      - db
+    networks:
+      - sis_network
+    stdin_open: true
+    tty: true
+
+volumes:
+  postgres_data:
+
+networks:
+  sis_network:
+
